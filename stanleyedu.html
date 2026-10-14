@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技高生升學建築系整合指南</title>
+<style>
+:root{
+  color-scheme:light;
+  --bg:#faf8f4; --card:#ffffff; --ink:#2a2e37; --sub:#6a7080; --line:#ebe6dc;
+  --brand:#3563c9; --brand-soft:#eaf0fb; --ok:#2e7d62; --ok-soft:#e8f5ee;
+  --warn:#9a6a1c; --warn-soft:#fdf3df; --bad:#b5483f; --bad-soft:#fcebe8;
+  --star:#7d55b8; --star-soft:#f1ebf9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  line-height:1.8;font-size:16px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+header{padding:32px 0 20px}
+h1{font-size:26px;margin:0 0 6px;line-height:1.3}
+.sub{color:var(--sub);margin:0}
+.alerts{display:grid;gap:10px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.alert{border-radius:12px;padding:14px 16px;border:1px solid var(--line);background:var(--card);font-size:15px}
+.alert b{display:block;margin-bottom:2px}
+.alert.warn{background:var(--warn-soft);border-color:transparent}
+.alert.bad{background:var(--bad-soft);border-color:transparent}
+.alert.ok{background:var(--ok-soft);border-color:transparent}
+nav{position:sticky;top:0;z-index:20;background:rgba(250,248,244,.96);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:8px 16px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--sub);padding:6px 12px;border-radius:999px;font-size:14px}
+nav a:hover{background:var(--brand-soft);color:var(--brand)}
+section{padding:28px 0 8px}
+h2{font-size:20px;margin:0 0 4px}
+h3{font-size:16px;margin:18px 0 8px}
+.lead{color:var(--sub);margin:0 0 14px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(60,50,30,.04)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:0 1px 2px rgba(60,50,30,.04)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--brand-soft);color:var(--brand);font-weight:600;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.rowh,th.rowh{position:sticky;left:0;background:var(--card);font-weight:600;white-space:nowrap;z-index:1}
+th.rowh{background:var(--brand-soft)}
+.cmp{min-width:1000px}
+.cmp td{min-width:150px}
+.cmp th.star,.matrix th.star{background:var(--star-soft);color:var(--star)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;margin:0 4px 2px 0;font-weight:600}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}
+.tag.warn{background:var(--warn-soft);color:var(--warn)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.tag.star{background:var(--star-soft);color:var(--star)}
+.tag.gray{background:var(--line);color:var(--sub)}
+.dots{letter-spacing:2px;color:var(--brand)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px}
+.tabs button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);
+  padding:8px 18px;border-radius:999px}
+.tabs button[aria-pressed="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.panel{margin-bottom:18px}
+.panel[hidden]{display:none}
+.panel h3.ph{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:18px}
+.cols{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.cols .card h4{margin:0 0 6px;font-size:14px;color:var(--sub);font-weight:600}
+ul{margin:6px 0;padding-left:20px}
+li{margin:3px 0}
+.stages{display:grid;gap:10px}
+.stage{display:grid;grid-template-columns:150px 1fr;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:12px 14px}
+.stage .when{font-weight:700;color:var(--brand)}
+.stage .when small{display:block;color:var(--sub);font-weight:500}
+@media(max-width:600px){.stage{grid-template-columns:1fr}h1{font-size:22px}}
+.tiers{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.tier{border-radius:14px;padding:14px;border:1px solid var(--line);background:var(--card)}
+.tier h4{margin:0 0 4px}
+.small{font-size:13px;color:var(--sub)}
+.barrow{margin:10px 0 4px;font-weight:600}
+.bar{display:flex;height:38px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.bar span{display:flex;align-items:center;justify-content:center;font-size:12px;color:#2a2e37;white-space:nowrap;overflow:hidden;padding:0 4px}
+.c1{background:#dbe6fb}.c2{background:#dff1e7}.c3{background:#fbecc9}.c4{background:#eadff6}.c5{background:#f8dcd8}.c6{background:#e9e5dc}
+.legend{font-size:13px;color:var(--sub);margin:6px 0 14px}
+a{color:var(--brand)}
+footer{padding:28px 0 60px;color:var(--sub);font-size:13px}
+.src li{word-break:break-all}
+@media print{nav{display:none}.tabs{display:none}.panel[hidden]{display:block}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap">
+  <h1>技高生跨考學測「國・英・數B」升學建築系整合指南</h1>
+  <p class="sub">考試渠道 × 考試時間 × 考試科目 × 六校比較 × 學程與人脈　｜　整理日期 2026-10-14（以下以 2027 年入學週期為準）</p>
+  <div class="alerts">
+    <div class="alert bad"><b>⚠ 安徽建築大學要求「數學A」</b>2023–2026 年簡章皆寫：語文、數學A、英語及其他科目學測成績須達均標。只準備數學B無法符合，詳見第 4 節。</div>
+    <div class="alert ok"><b>★ 北京建築大學：國英數B可以走</b>2025 年簡章要求語文、數學（A 或 B）、英文三科學測均標，數學B可用；名額僅 5 人。學測也能用在台科大、北科大的「四技申請」。</div>
+    <div class="alert warn"><b>⏰ 學測報名即將開始</b>依原表約 10 月下旬～11 月上旬，請盡快到大考中心確認 2027 學測的實際報名日期。</div>
+    <div class="alert warn"><b>網報日期有出入</b>你的原表寫 3/1–3/15，但安徽建築、北京建築簡章皆為 3/1–3/31。請以各校當年簡章為準。</div>
+  </div>
+</div>
+</header>
+
+<nav>
+<div class="wrap">
+  <a href="#s1">① 時程總表</a>
+  <a href="#s2">② 六校比較</a>
+  <a href="#s3">③ 分科準備</a>
+  <a href="#s4">④ 渠道×科目對照</a>
+  <a href="#s5">⑤ 時間分配與策略</a>
+  <a href="#s6">⑥ 競爭力與人脈</a>
+  <a href="#s7">⑦ 五年培養模塊</a>
+  <a href="#s8">⑧ 待確認與來源</a>
+</div>
+</nav>
+
+<main class="wrap">
+
+<!-- ========== 1 ========== -->
+<section id="s1">
+  <h2>① 升學管道、報考與考試時程</h2>
+  <p class="lead">日期為每年週期的常態，實際日期以大考中心、統測中心與各校當年簡章為準。</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>管道 / 考試</th><th>報名時間</th><th>考試 / 審核時間</th><th>戰略意義</th></tr></thead>
+    <tbody>
+      <tr><td><b>學測 GSAT</b><br>國文、英文、數學B</td><td>10 月下旬～11 月上旬</td><td>1 月下旬（約 1/20～1/22）</td><td>取得國英數均標成績，作為申請大陸高校的學術證明。</td></tr>
+      <tr><td><b>統測 TVE</b><br>共同科＋專業科目</td><td>12 月上旬～中旬</td><td>4 月底～5 月初（約 4/25～4/27）</td><td>技高升學主線，保台科大、北科大等台灣科大錄取資格。</td></tr>
+      <tr><td><b>大陸高校依學測網報</b><br>（gatzs.com.cn 系統）</td><td>3/1～3/15（原表）<br><span class="tag warn">安徽建築、北京建築簡章為 3/1～3/31</span></td><td>4～5 月，專家審核與線上面試<br><span class="small">安徽建築 2023、2024 年審查與面試 4/1～5/14；北京建築 2025 年資格審核 4/1～5/14、5/15 公布擬錄取、5/15～5/19 確認、8 月發通知書</span></td><td>免筆試。學測均標＋技高作品集 / 專題，直接網路申請。</td></tr>
+      <tr><td><b>特殊校考 / 單招</b><br>（中國美院、中央美院等）</td><td>2～3 月（依各校簡章）</td><td>3～4 月（校考 / 專案審核）</td><td>術科強者走美院校考。<br><span class="small">國美、央美的校考流程是否開放台灣考生，需以當年簡章確認。</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ========== 2 ========== -->
+<section id="s2">
+  <h2>② 六校深度比較</h2>
+  <p class="lead">六個維度：聲譽、學制、專業認證、業界定位與評價、台灣認同度、入學難度（對台）。橫向可捲動。標示「已查證」者來自簡章原文；「概略評估」為一般認知，請自行再核對。</p>
+  <div class="tablewrap">
+  <table class="cmp">
+    <thead><tr>
+      <th class="rowh">項目</th><th>中國美術學院<br><span class="small">國美・杭州</span></th><th>北美<br><span class="small">暫以中央美術學院理解・北京</span></th><th>台科大<br><span class="small">國立臺灣科技大學</span></th><th>北科大<br><span class="small">國立臺北科技大學</span></th><th>安徽建築大學<br><span class="small">合肥・公辦</span></th><th>北京建築大學<br><span class="small">北京・北建大</span></th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">聲譽</td><td>藝術設計類頂尖美院（概略評估）</td><td>教育部直屬、全國唯一的高等美術學校（已查證）</td><td>台灣技職第一學府（頂大級）</td><td>台灣老牌工科強校（技職第二）</td><td>公辦本科；土木工程一級學科博士點、工程學進 ESI 全球前 1%（已查證）。土建行業特色鮮明</td><td>北京市與住建部共建的公辦全日制高校，有西城、大興兩個校區；以建築、土木、城市為辦學主軸（已查證，2025 章程）</td></tr>
+      <tr><td class="rowh">學制</td><td>藝術類校考專業；2024 校考曾單列「建築學」，2025 摘要表未見，須確認</td><td>以當年校考簡章為準（未查到台灣考生專章）</td><td><b>四年制 / 五年制</b>（以四年制為主）</td><td><b>五年制</b>（建築學學士 B.Arch）</td><td><b>建築學五年</b>、理工科類（已查證）</td><td>建築學學費約 4,600 元人民幣 / 學年（2025 章程）；學制章程未載，建築類專業多為五年，請確認。2023 簡章專業列有「建築學（實驗班）」「建築類」「歷史建築保護工程」「環境設計」</td></tr>
+      <tr><td class="rowh">專業認證</td><td>未查證，請以住建部公告為準</td><td>未查證</td><td>IEET 認證、QS 建築領域台灣前列</td><td>IEET 認證、歷史底蘊深厚</td><td>專業評估狀態本次未查證，請查校方或住建部公告</td><td>章程未載專業評估資訊，請查校方與住建部公告（未查證）</td></tr>
+      <tr><td class="rowh">業界定位與評價</td><td>強在設計美學與藝術性，偏概念與表現（概略評估）</td><td>強在造型、人文、設計學科群互相支撐（校方自述）</td><td>台灣建築界與業界高度認可，實作與工程整合見長</td><td>工程與建築界校友口碑強，就業路徑成熟</td><td>建築、土木、城鄉規劃一體的土建老牌，安徽及華東設計院系統為主</td><td>北京土建設計與住建系統資源集中，偏工程與城市取向（概略評估）</td></tr>
+      <tr><td class="rowh">台灣認同度</td><td>美術設計圈知名度高；學歷是否獲台灣採認須核對</td><td>同左，須核對</td><td>台灣全體業界與社會高度認可</td><td>台灣工程與建築界極具校友口碑</td><td>知名度低；採認與建築師應考資格須核對</td><td>知名度低；學歷採認與建築師應考資格須核對</td></tr>
+      <tr><td class="rowh">入學難度（對台）</td><td><span class="dots">●●●●●</span><br>極高。術科校考；2024 年建築學校考最低錄取位次 143</td><td><span class="dots">●●●●●</span><br>極高。術科校考（2025 年線上＋現場兩階段）</td><td><span class="dots">●●●●●</span><br>極高（統測榜首群、學測前標至頂標）</td><td><span class="dots">●●●●○</span><br>高（統測前段、學測前標）</td><td><span class="dots">●●●○○</span><br>中。名額僅 5 人，須數學A與其他科均標，再經面試</td><td><span class="dots">●●●○○</span><br>中。2025 年學測招生 5 人，語文、數學（A 或 B）、英文三科均標；未見面試要求</td></tr>
+      <tr><td class="rowh">對台報考渠道</td><td>藝術類校考（需確認台灣考生適用）</td><td>藝術類校考（需確認）</td><td>統測（甄選 / 分發）</td><td>統測（甄選 / 分發）</td><td>學測網報</td><td>學測網報（gatzs 系統）；未查到統測專案</td></tr>
+      <tr><td class="rowh">技高友善度</td><td><span class="tag warn">看術科</span></td><td><span class="tag warn">看術科</span></td><td><span class="tag ok">主線</span></td><td><span class="tag ok">主線</span></td><td><span class="tag bad">較難：需數學A</span></td><td><span class="tag ok">可行：國英數B三科均標，不需數學A</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">「北美」我無法確定指哪所學校，這裡暫以中央美術學院（北京）處理。如果你指的是別校，告訴我校名即可替換該欄。</p>
+</section>
+
+<!-- ========== 3 ========== -->
+<section id="s3">
+  <h2>③ 分科準備：統測 vs 學測，加上各校怎麼用這一科</h2>
+  <p class="lead">點選科目只看單科，點「全部」一次看完三科。</p>
+  <div class="tabs" role="group" aria-label="科目切換">
+    <button type="button" data-subj="all" aria-pressed="true">全部</button>
+    <button type="button" data-subj="chi" aria-pressed="false">📕 國文</button>
+    <button type="button" data-subj="eng" aria-pressed="false">📘 英文</button>
+    <button type="button" data-subj="math" aria-pressed="false">📐 數學B</button>
+  </div>
+
+  <!-- 國文 -->
+  <div class="panel" data-panel="chi">
+    <h3 class="ph">📕 國文：用統測閱讀底子，降維應對學測長文</h3>
+    <div class="cols">
+      <div class="card"><h4>統測特色與優勢</h4>國學常識、字音字形、技高課本核心古文、基礎文意理解。</div>
+      <div class="card"><h4>學測特色與差異</h4>七成以上為超長篇白話閱讀、跨領域圖表、甲乙文對讀；另加國寫（知性題＋感性題）。</div>
+      <div class="card"><h4>補漏與穩拿均標戰術</h4>
+        <ul>
+          <li>放棄死背 30 篇古文，學測極少考課本死扣題。</li>
+          <li>考前 1 個月每週六練 2 篇跨領域白話閱讀。</li>
+          <li>國寫用「破題、舉例、反思、總結」四段，寫 400～500 字以上。</li>
+        </ul></div>
+    </div>
+    <h3>各校怎麼用國文</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>學校</th><th>對國文（語文）的要求</th></tr></thead>
+      <tbody>
+        <tr><td>安徽建築</td><td>語文須達均標以上（與數學A、英語及其他科目並列）。</td></tr>
+        <tr><td>北京建築</td><td>語文須均標。2025 簡章要求語文、數學、英文三科皆均標（2023 簡章曾為任一科），條件逐年可能變動。</td></tr>
+        <tr><td>台科大、北科大</td><td>統測共同科國文，計入統測總成績。</td></tr>
+        <tr><td>國美、北美</td><td>以術科為主，文化科要求以當年簡章為準（未查到台灣考生條款）。</td></tr>
+      </tbody></table></div>
+  </div>
+
+  <!-- 英文 -->
+  <div class="panel" data-panel="eng">
+    <h3 class="ph">📘 英文：用統測文法，補齊 1000 個學測核心單字</h3>
+    <div class="cols">
+      <div class="card"><h4>統測特色與優勢</h4>字彙量約 3500～4500 字，題型直白（字彙、對話、綜合測驗、閱讀），文法基本功紮實。</div>
+      <div class="card"><h4>學測特色與差異</h4>字彙量 4500～5500 字（Level 3～4），閱讀篇幅長、無對話題；含 28 分手寫翻譯與作文。</div>
+      <div class="card"><h4>補漏與穩拿均標戰術</h4>
+        <ul>
+          <li>手寫題考場盡力寫即可，不額外花時間練。</li>
+          <li>每天在公車、早餐時用 APP 刷 10～15 分鐘 Level 3～4 單字。</li>
+          <li>多認 1000 字，選擇題多對數題，8 級分均標可期。</li>
+        </ul></div>
+    </div>
+    <h3>各校怎麼用英文</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>學校</th><th>對英文的要求</th></tr></thead>
+      <tbody>
+        <tr><td>安徽建築</td><td>英語須達均標以上。</td></tr>
+        <tr><td>北京建築</td><td>英文須均標，與語文、數學三科並列（2025 簡章）。</td></tr>
+        <tr><td>台科大、北科大</td><td>統測共同科英文，計入統測總成績。</td></tr>
+        <tr><td>國美、北美</td><td>以術科為主，英文要求以簡章為準。</td></tr>
+      </tbody></table></div>
+  </div>
+
+  <!-- 數學B -->
+  <div class="panel" data-panel="math">
+    <h3 class="ph">📐 數學B：發揮統測數C / 數B優勢，降維打擊學測數B</h3>
+    <div class="cols">
+      <div class="card"><h4>統測特色與優勢</h4>公式推導與代數計算（直線、圓、向量、三角、指對數、排列組合等），難度與計算量高。</div>
+      <div class="card"><h4>學測特色與差異</h4>計算量較低，但包裝成生活素養情境（單點透視圖、地圖經緯線、球面幾何、比例放大縮小）。</div>
+      <div class="card"><h4>補漏與穩拿均標戰術</h4>
+        <ul>
+          <li>統測重疊單元（約 60% 以上）直接裸考即可拿分，不必讀高中數學課本。</li>
+          <li>考前 2 週到大考中心下載近 3 年學測數學B歷屆試題，寫 3 回，熟悉素養題敘述。</li>
+        </ul></div>
+    </div>
+    <h3>各校怎麼用數學</h3>
+    <div class="tablewrap"><table>
+      <thead><tr><th>學校</th><th>對數學的要求</th></tr></thead>
+      <tbody>
+        <tr><td>安徽建築</td><td><span class="tag bad">須數學A</span>簡章明寫「數學A」均標以上，數學B不在條文內。要走這條必須另外準備並報考學測數學A，報名時請確認可否同時報考A與B。</td></tr>
+        <tr><td>北京建築</td><td>數學A或數學B皆可，須均標（2025 簡章）。數學B可直接使用。</td></tr>
+        <tr><td>台科大、北科大</td><td>統測共同科數學，計入統測總成績；專業科目依群別，以當年招生簡章為準。</td></tr>
+        <tr><td>國美、北美</td><td>以術科為主（素描、設計等），數學不是核心。</td></tr>
+      </tbody></table></div>
+  </div>
+</section>
+
+<!-- ========== 4 ========== -->
+<section id="s4">
+  <h2>④ 報考渠道 × 時間 × 科目 總對照</h2>
+  <p class="lead">一張表看完：每所學校走哪條路、什麼時候報、考什麼、技高要注意什麼。</p>
+  <div class="tablewrap">
+  <table class="matrix" style="min-width:1020px">
+    <thead><tr>
+      <th class="rowh">學校</th><th>報考渠道</th><th>報名 / 申請時間</th><th>考試 / 審核</th><th>國文</th><th>英文</th><th>數學</th><th>其他與備註</th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="rowh">安徽建築大學</td>
+        <td>學測網報（gatzs 系統）</td>
+        <td>3/1～3/31</td>
+        <td>網路面試，審查面試約 4/1～5/14；5 月中旬系統確認錄取</td>
+        <td>須均標</td><td>須均標</td><td><b>須數學A均標</b></td>
+        <td>「其他科目」也須均標，確切範圍請看 2027 簡章；全校僅招 5 人，專業含建築學（五年）</td></tr>
+      <tr><td class="rowh">北京建築大學 <span class="tag ok">三科均標</span></td>
+        <td>學測網報（gatzs 系統）；未查到統測專案</td>
+        <td>3/1～3/31（2025 年）</td>
+        <td>資格審核 4/1～5/14，簡章未提面試；5/15 公布擬錄取，5/15～5/19 確認，8 月發通知書</td>
+        <td>須均標</td><td>須均標</td><td>數學A或B均標</td>
+        <td>2025 年學測招生 5 人；專業表為圖片，是否含建築學請看 2027 簡章（2023 簡章曾列建築學實驗班）；建築學學費約 4,600 元 / 學年</td></tr>
+      <tr><td class="rowh">中國美術學院</td>
+        <td>藝術類校考（台灣考生是否適用待確認）</td>
+        <td>2～3 月（原文件）；大陸考生流程為 1 月網路初試</td>
+        <td>初試、復試兩階段，以位次錄取</td>
+        <td colspan="3">以術科為主：素描、水彩 / 設計、作品集（細節以當年簡章為準）</td>
+        <td>2024 年校考建築學位次線 143；錄取不限省份</td></tr>
+      <tr><td class="rowh">北美（暫指央美）</td>
+        <td>藝術類校考（待確認）</td>
+        <td>校考約 1～2 月</td>
+        <td>2025 年：1/11 線上考＋2/22 現場考</td>
+        <td colspan="3">以術科為主，校考合格人數不超過計畫數 4 倍</td>
+        <td>未查到台灣考生專章，建議直接向校方招生處詢問</td></tr>
+      <tr><td class="rowh">台科大建築</td>
+        <td>統測（甄選入學、聯合分發）</td>
+        <td>統測報名 12 月上中旬</td>
+        <td>統測 4 月底～5 月初</td>
+        <td colspan="3">四技甄選（115 學年）兩階段：統測檢定篩選＋指定項目甄試（專題實作、學習歷程備審、面試），甄試費 750 元。設計群考國、英、數B＋色彩原理、造形原理、設計概論＋基本設計 / 繪畫基礎 / 基礎圖學實習，招 9 人；土木與建築群考國、英、數C＋基礎工程力學、材料與試驗＋測量 / 製圖實習，招 15 人。另有<b>四技申請（學測加權＋備審各 50%，招 24 人）</b>、聯合登記分發（11 人）、技職繁星（前 30%，4 人）</td>
+        <td>難度極高；技高主線。學測可走四技申請，名額與要求以當年簡章為準</td></tr>
+      <tr><td class="rowh">北科大建築</td>
+        <td>統測（甄選入學、聯合分發）</td>
+        <td>統測報名 12 月上中旬</td>
+        <td>統測 4 月底～5 月初</td>
+        <td colspan="3">四技甄選（115 學年）：土木與建築群招 16 人、設計群招 10 人，統測檢定後指定項目甄試，備審資料上傳截止 6/9；聯合登記分發土建群 6 人、設計群 5 人；四技申請（114 學年）依學測加權，招 2 人</td>
+        <td>你的原表寫五年制 B.Arch，但校系簡介頁只標「學士、碩士」，學制請再確認；難度高</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">名單與條件來自 2023–2026 年各校公開簡章；每年可能微調，2027 年簡章通常在 12 月前後公布。</p>
+</section>
+
+<!-- ========== 5 ========== -->
+<section id="s5">
+  <h2>⑤ 技高生「無痛雙軌」時間分配與報考策略</h2>
+  <p class="lead">主體仍是統測（95% 精力），學測當副線微調（約 5%）。</p>
+  <div class="stages">
+    <div class="stage"><div class="when">階段一<small>現在～12 月底</small></div><div>統測 100%，零碎時間 5%。照學校統測進度走；每天早晚用 APP 刷 10～15 分鐘 Level 3～4 英文單字。<b>同時確認學測報名日期並完成報名。</b></div></div>
+    <div class="stage"><div class="when">階段二<small>1/1～學測前一週</small></div><div>統測 95%、學測微調 5%。每週六或日抽 2 小時寫 1 回學測國文閱讀並瀏覽作文題目，保持背單字。<b>若要考安徽建築，此時開始補數學A。</b></div></div>
+    <div class="stage"><div class="when">階段三<small>學測前 2 週</small></div><div>統測 90%、學測 10%。寫 3 回學測數學B歷屆題，適應生活故事型題目與節奏。</div></div>
+    <div class="stage"><div class="when">階段四<small>1 月下旬</small></div><div>平常心應考國、英、數B。考完當天結束學測任務，100% 回到統測衝刺。</div></div>
+    <div class="stage"><div class="when">階段五<small>2～5 月</small></div><div>3 月於網報平台完成大陸高校報名與作品集上傳（<b>以各校簡章截止日為準，多為 3/31</b>）；4～5 月線上面試，同時衝刺 4 月底統測。</div></div>
+  </div>
+
+  <h3>建議的三層配置（我的整理，非保證）</h3>
+  <div class="tiers">
+    <div class="tier"><h4><span class="tag ok">主攻</span>台科 / 北科</h4>以統測成績走甄選入學與聯合分發，是技高主線；學測成績另可走四技申請，兩條路可並行。</div>
+    <div class="tier"><h4><span class="tag star">穩妥</span>北京建築大學</h4>學測國、英、數B三科均標即可報名，不需數學A；名額僅 5 人，條件請看簡章。</div>
+    <div class="tier"><h4><span class="tag warn">加碼</span>安徽建築、國美、北美</h4>安徽建築需加考學測數學A，名額少；美院要靠術科作品集，要提早確認台灣考生可不可報。</div>
+  </div>
+
+  <h3>大陸建築系作品集（Portfolio）黃金結構</h3>
+  <div class="cols">
+    <div class="card"><h4>① 繪畫基礎</h4>素描、水彩、手繪速寫，展現空間感知與造形能力。</div>
+    <div class="card"><h4>② 工程製圖與數位建模</h4>平立剖面圖、SketchUp / Revit 3D 渲染，展現建築專業基本功。</div>
+    <div class="card"><h4>③ 專題與實體模型</h4>專題製作過程、建築紙模型或空間裝置照片，展現實作與解決問題能力。</div>
+  </div>
+  <p class="small">技高生有大量素描水彩、工程製圖、電繪與專題實作，這是相對普通高中生的優勢。</p>
+</section>
+
+<!-- ========== 6 ========== -->
+<!-- ========== 6 ========== -->
+<section id="s6">
+  <h2>⑥ 競爭力與人脈生態</h2>
+  <p class="lead">先講清楚：各校校友網絡與雇主偏好沒有官方統計，下表凡標「概略評估」的是一般認知與地理產業推論，不是查證結果；「已查證」才來自簡章、章程或校方頁面。</p>
+  <div class="tablewrap">
+  <table style="min-width:980px">
+    <thead><tr><th class="rowh">學校</th><th>所在產業圈</th><th>競爭力（優勢）</th><th>限制與風險</th><th>人脈生態</th><th>回台發展</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">中國美術學院</td><td>杭州・長三角設計與藝術圈</td><td>設計美學與作品集導向；校考淘汰率高，錄取本身是訊號（2024 年建築學校考最低位次 143，已查證）</td><td>難度極高；台灣考生可否報考待確認；偏藝術表現，工程與法規訓練要自己補</td><td>美術、設計、展覽系統的校友與師長網絡（概略評估）</td><td>設計與藝術圈有知名度；學歷採認與建築師資格須核對</td></tr>
+      <tr><td class="rowh">北美（暫指央美）</td><td>北京・藝術與設計圈</td><td>教育部直屬、全國唯一的高等美術學校（已查證）；造型、設計、建築、人文學科群並存</td><td>難度極高；未查到台灣考生專章；術科要求高</td><td>北京藝術機構與設計業網絡（概略評估）</td><td>同上，須核對</td></tr>
+      <tr><td class="rowh">台科大</td><td>台北・台灣建築與營建業</td><td>台灣業界與社會高度認可；四技申請與甄選管道多，可用統測或學測（已查證）</td><td>錄取門檻極高；設計群與土建群考科不同，須先選群</td><td>台灣建築師事務所、營造與公部門的校友網絡（概略評估）</td><td>直接銜接台灣就業；建築師應考資格以考選部規定為準</td></tr>
+      <tr><td class="rowh">北科大</td><td>台北・台灣建築與工程業</td><td>工程與建築界校友口碑強（你提供的資料）；校系頁強調設計與實作、永續、跨領域整合</td><td>學制待確認；難度高</td><td>台灣工程與建築業校友網絡（概略評估）</td><td>直接銜接台灣就業</td></tr>
+      <tr><td class="rowh">安徽建築大學</td><td>合肥・安徽與華東土建系統</td><td>土木工程博士後流動站與一級學科博士點、工程學進 ESI 全球前 1%；校辦企業含建築設計研究院、岩土勘察設計院、規劃設計研究院（已查證）</td><td>名額僅 5 人；需數學A；台灣知名度低</td><td>安徽與華東設計院所、建設單位的校友網絡（概略評估）</td><td>學歷採認與建築師資格須核對</td></tr>
+      <tr><td class="rowh">北京建築大學</td><td>北京・住建與城市建設系統</td><td>北京市與住建部共建（已查證）；建築、土木、城市為辦學主軸；北京設計院所與建設單位集中（概略評估）</td><td>名額僅 5 人；2025 年起三科皆需均標；學制與專業評估資訊本次未查到</td><td>北京土建與城市規劃系統的校友網絡（概略評估）</td><td>學歷採認與建築師資格須核對；以中國大陸就業為主要路徑</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>怎麼用這張表</h3>
+  <div class="cols">
+    <div class="card"><h4>想留在台灣執業</h4>台科大、北科大的人脈與證照路徑最直接。大陸學校要先確認學歷採認與建築師應考資格，這一項比學校名氣更重要。</div>
+    <div class="card"><h4>想去大陸工作或念研究所</h4>北京建築、安徽建築以土建系統見長；美院偏設計與藝術。人脈主要在當地設計院所與建設單位。</div>
+    <div class="card"><h4>技高生的差異化</h4>製圖、基本設計、電繪與專題實作，是作品集的核心，也是在低年級設計課拉開差距的地方。</div>
+  </div>
+</section>
+
+<!-- ========== 7 ========== -->
+<section id="s7">
+  <h2>⑦ 各校五年制 B.Arch 培養模塊分析</h2>
+  <p class="lead">先說資料狀況：北京建築、安徽建築、國美、央美、北科大的官方培養方案，我都沒查到；台科大只有 98 學年度的舊版四年制必修表。所以這一節用兩份真實的五年制 B.Arch 培養方案（<b>清華大學 2022 版、上海大學 2024 版，不是你要報考的學校</b>）當「口徑基準」，把五年拆成統一的模塊，再說明各校目前查到什麼、預期落在哪一型。標「推論」的就是推論，不是查證結果。</p>
+
+  <h3>A. 統一模塊口徑：五年到底在學什麼</h3>
+  <div class="tablewrap">
+  <table style="min-width:860px">
+    <thead><tr><th class="rowh">模塊</th><th>內容</th><th>在五年中的位置</th><th>技高生起跑點</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">① 通識與公共基礎</td><td>外語、數學、思政、體育、通識選修</td><td>集中在一、二年級</td><td><span class="tag warn">需補強</span>英文、數學；其餘靠平時成績</td></tr>
+      <tr><td class="rowh">② 設計與美術基礎</td><td>設計基礎、空間設計基礎、建築初步、素描色彩、製圖、數位基礎</td><td>一、二年級</td><td><span class="tag ok">優勢</span>製圖、素描、水彩、電繪都是技高強項</td></tr>
+      <tr><td class="rowh">③ 建築歷史與理論</td><td>中外建築史、設計理論、規劃與景觀導論</td><td>二、三年級</td><td><span class="tag warn">需補強</span>閱讀量大，要靠長篇閱讀能力</td></tr>
+      <tr><td class="rowh">④ 建築技術</td><td>構造、力學與結構、建築物理與設備、數學</td><td>二至四年級</td><td><span class="tag warn">需補強</span>力學與結構；統測數C底子有幫助</td></tr>
+      <tr><td class="rowh">⑤ 設計課序列（主幹）</td><td>由小型到大型建築，再到城市設計與專題設計</td><td>一至四年級，連續不斷</td><td><span class="tag ok">優勢</span>作品集與專題經驗直接對應</td></tr>
+      <tr><td class="rowh">⑥ 實踐環節</td><td>建造、測繪、寫生、國際工作坊、事務所實踐</td><td>每年暑期或學期穿插，四、五年級最重</td><td><span class="tag ok">優勢</span>實作與專題習慣</td></tr>
+      <tr><td class="rowh">⑦ 畢業設計</td><td>畢設調研、畢業設計或綜合論文訓練</td><td>五年級</td><td>看五年累積</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>B. 兩份五年制真實方案的學分結構（口徑基準）</h3>
+  <p class="small">兩校的模塊分類方式不同，學分數不能直接比；清華 201 學分，上大 321 學分。下面用各自占總學分的比例。上大那份原始表格有些亂碼，「其他」約 21 學分是估算。</p>
+
+  <div class="barrow">清華大學（五年制，總 201 學分）</div>
+  <div class="bar">
+    <span class="c1" style="width:22.9%">通識 46</span>
+    <span class="c2" style="width:19.9%">基礎課 40</span>
+    <span class="c3" style="width:32.8%">設計課序列 66</span>
+    <span class="c4" style="width:10%">實踐 20</span>
+    <span class="c5" style="width:7.5%">論文 15</span>
+    <span class="c6" style="width:6.9%">自由 14</span>
+  </div>
+  <div class="legend">通識 46（22.9%）、基礎課 40（19.9%，含建築美術 9、技術 12、歷史 6）、設計課序列 66（32.8%）、夏季實踐 20（10.0%，含建築師業務實踐 11）、綜合論文訓練 15（7.5%）、自由發展 14（7.0%）</div>
+
+  <div class="barrow">上海大學（五年制，總 321 學分）</div>
+  <div class="bar">
+    <span class="c1" style="width:29.9%">公共基礎 96</span>
+    <span class="c2" style="width:32.4%">學科基礎 104</span>
+    <span class="c3" style="width:9.3%">選修 30</span>
+    <span class="c4" style="width:21.8%">實踐教學 70</span>
+    <span class="c6" style="width:6.6%">其他</span>
+  </div>
+  <div class="legend">公共基礎 96（29.9%）、學科基礎 104（32.4%）、專業選修 30（9.3%）、實踐教學 70（21.8%）、其他約 21（約 6.5%）</div>
+
+  <div class="tablewrap">
+  <table style="min-width:900px">
+    <thead><tr><th class="rowh">年級</th><th>清華大學（設計課導向）</th><th>上海大學（藝術與數位導向）</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">一年級</td><td>建築設計（1）（2），每門 4 學分；暑期建造實習 2 週</td><td>美術等基礎訓練（具體學期分配原表不清）；實踐 9 學分</td></tr>
+      <tr><td class="rowh">二年級</td><td>建築設計（3）（4）；暑期測量與 CAAD 實習</td><td>空間設計基礎、設計基礎、數位設計基礎；數智空間設計 1；設計相關約 30 學分；實踐 7 學分</td></tr>
+      <tr><td class="rowh">三年級</td><td>建築設計（5）（6）（7）、住區規劃與住宅設計；暑期古建測繪 2 週</td><td>數智空間設計 2～4，每門 6 學分；實踐 10 學分</td></tr>
+      <tr><td class="rowh">四年級</td><td>建築城市景觀設計、城市設計、設計專題（1）；建築師業務實踐 11 學分（春夏學期共約 11 週）</td><td>專題設計 A1～A3，每門 6 學分；實踐 4 學分</td></tr>
+      <tr><td class="rowh">五年級</td><td>設計專題（2）6 學分、專業選修；綜合論文訓練 15 學分</td><td>實踐 40 學分：建築師業務實踐（2）16、畢設調研 6、畢業設計 18</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">兩者的共同點：設計課從一年級連續到四年級，第五年重心是實踐與畢業設計。差別在清華第五年仍有設計專題與選修；上大第五年幾乎全部是實踐與畢設，藝術與數位課程比重較高。</p>
+
+  <h3>C. 各校現況：查到什麼、預期落在哪一型</h3>
+  <div class="tablewrap">
+  <table style="min-width:1020px">
+    <thead><tr><th class="rowh">學校</th><th>學制</th><th>已查證的學程資訊</th><th>預期落點（推論）</th><th>還缺什麼</th></tr></thead>
+    <tbody>
+      <tr><td class="rowh">台科大</td><td>學士、碩士、博士；你的原表寫四年制為主</td><td>98 學年度四年制必修表：建築設計（一）至（八）共八門，一至四年級各兩門；設計素描（一）（二）；結構行為、環境控制系統、建築材料、建築構造、敷地計畫、建築計畫；西洋、中國、近代建築史；實務專題 2 學分；校外實習 0 學分；畢業最低 136 學分（共同必修 34、專業必修 72、選修至少 30）</td><td>四年走完設計序列，工程與營建整合取向<span class="tag gray">推論</span></td><td>現行課程表；是否有五年制班別</td></tr>
+      <tr><td class="rowh">北科大</td><td>校系頁只標「學士、碩士」；你的原表寫五年制</td><td>校系頁未列課程；學群為工程與建築設計，技職群類為土木與建築群</td><td>學制確認前不做預期</td><td>學制、課程表、是否有校外實習</td></tr>
+      <tr><td class="rowh">北京建築大學</td><td>建築學章程未載；學費約 4,600 元 / 學年</td><td>2023 簡章專業含建築學（實驗班）、建築類、歷史建築保護工程、環境設計；部分專業採大類招生，入學後依志願與綜合成績分流（2025 章程）</td><td>工科建築取向：技術與工程模塊比重較高，近清華型<span class="tag gray">推論</span></td><td>培養方案、設計課序列、是否有事務所實踐</td></tr>
+      <tr><td class="rowh">安徽建築大學</td><td>建築學五年（簡章已查證）、理工科類</td><td>只查到專業名稱與學制；校內土木工程為強項學科</td><td>與土木、結構整合的工程取向<span class="tag gray">推論</span></td><td>培養方案、課程序列</td></tr>
+      <tr><td class="rowh">中國美術學院</td><td>學制未查到</td><td>2024 年校考曾單列建築學</td><td>美術與空間設計基礎比重較高，近上大型<span class="tag gray">推論</span></td><td>培養方案、學制、是否仍招建築學</td></tr>
+      <tr><td class="rowh">北美（暫指央美）</td><td>學制未查到</td><td>校方自述學科群含造形、設計、建築、人文</td><td>造型基礎比重高<span class="tag gray">推論</span></td><td>建築學課程資料、台灣考生條款</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>D. 拿到各校培養方案時，看這六個指標</h3>
+  <div class="cols">
+    <div class="card"><h4>① 總學分與學制</h4>清華五年 201、上大五年 321，差很多是因為學分制度不同，不要直接比總數。</div>
+    <div class="card"><h4>② 設計課占比</h4>設計課序列占總學分的比例，清華約 33%。比例越高越像「設計訓練型」。</div>
+    <div class="card"><h4>③ 實踐占比</h4>上大約 22%，其中第五年占 40 學分。看有沒有事務所或設計院實踐。</div>
+    <div class="card"><h4>④ 第五年安排</h4>只做畢設，還是仍有設計專題與選修；決定你畢業時的作品集厚度。</div>
+    <div class="card"><h4>⑤ 技術模塊</h4>力學、結構、構造、設備的學分與起始年級，是技高生要提前補的部分。</div>
+    <div class="card"><h4>⑥ 專業評估</h4>是否通過住建部建築學專業評估，會影響日後在大陸的執業路徑，也要與台灣建築師資格一併核對。</div>
+  </div>
+  <p class="small">各校建築學院網頁通常在「本科教學」或「人才培養」欄放培養方案。貼給我，我把 C 表換成逐校真實內容。</p>
+</section>
+
+<section id="s8">
+  <h2>⑧ 待確認清單與資料來源</h2>
+  <div class="cols">
+    <div class="card"><h4>請先確認的事</h4>
+      <ul>
+        <li><b>「北美」是哪所學校？</b>目前暫以中央美術學院處理。</li>
+        <li><b>學歷採認與建築師資格：</b>報考前請查台灣教育部「大陸地區學歷採認」名單，以及台灣建築師考試的應考資格規定。安徽建築、北京建築、國美、央美是否在採認名單，我沒有查證。</li>
+        <li><b>網報截止日：</b>3/15 或 3/31，以各校 2027 年簡章為準。</li>
+        <li><b>國美、北美：</b>台灣考生能不能走學測免試或校考，我沒有查到明確條款，請直接洽招生辦。</li>
+        <li><b>安徽建築「其他科目」：</b>確切要求哪幾科，等 2027 簡章公布再看。</li>
+        <li><b>北京建築：</b>我只找到 2025 與 2023 簡章，2026、2027 年版本沒讀到；專業表是圖片，建築學是否在清單、學制幾年都要再確認。條件也變過（2023 任一科均標，2025 三科均標）。</li>
+        <li><b>北京建築統測專案：</b>沒有查到，目前只能走學測。</li>
+        <li><b>北科大學制：</b>原表寫五年制，校系簡介頁沒有標示。</li>
+        <li><b>五年學程與人脈：</b>⑥ 節的「概略評估」、⑦ 節的「預期落點」都是推論；⑦ 節的學分與逐年安排來自清華、上大兩份參照方案，不是你要報考的學校。</li>
+      </ul></div>
+    <div class="card src"><h4>主要來源</h4>
+      <ul>
+        <li><a href="https://www.ahjzu.edu.cn/zsw/2025/1211/c2435a260960/page.htm">安徽建築大學 2026 年依學測成績招收簡章</a></li>
+        <li><a href="https://www.ahjzu.edu.cn/zsw/2024/0202/c2435a228247/page.htm">安徽建築大學 2024 年簡章（審查面試時間）</a></li>
+        <li><a href="https://www.dxsbb.com/news/92821.html">中國美術學院 2024 / 2025 錄取位次（含建築學校考）</a></li>
+        <li><a href="https://www.dxsbb.com/news/70913.html">中央美術學院 2025 年校考簡章</a></li>
+        <li><a href="https://www.eduzs.org.cn/html/lmzsjz/beijing/2025/0108/8407.html">北京建築大學 2025 年招收台灣高中畢業生簡章</a></li>
+        <li><a href="https://idri.bucea.edu.cn/gatsw/gatxs/57a076c70f5b4f8d88dca88d4010b504.htm">北京建築大學 2023 年台灣學測簡章（專業清單）</a></li>
+        <li><a href="https://gaokao.eol.cn/bei_jing/dongtai/202505/t20250520_2669562.shtml">北京建築大學 2025 年本科招生章程</a></li>
+        <li><a href="https://www.unews.com.tw/School/Department/20/632">台科大建築系（115 學年招生資訊）</a></li>
+        <li><a href="https://www.unews.com.tw/School/Department/23/712">北科大建築系（115 學年招生資訊）</a></li>
+        <li><a href="https://www.ad.ntust.edu.tw/documents/20090909-01.pdf">台科大建築系四年制必修科目表（98 學年度版）</a></li>
+        <li><a href="https://www.tsinghua.edu.cn/jxjywj/bkzy2022/zxzy/1.pdf">清華大學建築學專業培養方案（2022，口徑基準）</a></li>
+        <li><a href="https://bksy.shu.edu.cn/2024jianzhuxue.pdf">上海大學建築學專業教學計劃（2024，口徑基準）</a></li>
+      </ul></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">本頁為升學資料整理，非官方簡章。報名前請以各校、大考中心、統測中心當年公告為準。</div>
+</footer>
+
+<script>
+(function(){
+  var btns = document.querySelectorAll('.tabs button');
+  var panels = document.querySelectorAll('.panel');
+  function show(s){
+    btns.forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.subj === s ? 'true' : 'false'); });
+    panels.forEach(function(p){ p.hidden = !(s === 'all' || p.dataset.panel === s); });
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ show(b.dataset.subj); }); });
+  show('all');
+})();
+</script>
+</body>
+</html>
